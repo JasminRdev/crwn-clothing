@@ -17,3 +17,4 @@ export const FormInput = ({label, ...otherProps}) => {
         </div>
     )
 }
+ 

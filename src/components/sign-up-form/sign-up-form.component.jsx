@@ -52,7 +52,7 @@ const SignUpForm = () => {
             <form onSubmit={onSubmit}>
 
                 <FormInput 
-                    label={'Display Name'}
+                    label='Display Name'
                     type="text" 
                     onChange={handleChange }  
                     name="displayName"    
