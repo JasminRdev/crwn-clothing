@@ -34,6 +34,8 @@ export const CartProvider = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false)
     const [totalCount, setTotalCount] = useState(0)
 
+    console.log(cart)
+
     useEffect(()=> {
         const newCount = cart.reduce((total, item) => total + item.quantity, 0)
         setTotalCount(newCount)
