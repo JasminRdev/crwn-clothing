@@ -13,7 +13,9 @@ import {
     getFirestore,
     doc,
     getDoc,
-    setDoc
+    setDoc,
+    collection,
+    writeBatch
   } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -37,6 +39,25 @@ const firebaseConfig = {
   export const auth = getAuth();
   export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
   export const db = getFirestore();
+
+  export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = collection(db, collectionKey)
+    const batch = writeBatch(db)
+
+    //indirect forEach bs standard not working
+      Array.prototype.forEach.call(objectsToAdd, object => {
+        const docRef = doc(collectionRef, object.title.toLowerCase())
+        batch.set(docRef, object)
+      })
+
+    try {
+      await batch.commit();
+      console.log("done")
+    }
+    catch(err) {
+      console.log(err)
+    }
+  }
 
   export const createUserDocumentFromAuth = async (
     userAuth, 
