@@ -3,7 +3,6 @@ import { createContext, useEffect, useReducer } from "react";
 import { onAuthStateChangedListener,createUserDocumentFromAuth } from "../utils/firebase/firebase.utils"
 import {createAction} from '../utils/reducer/reducer.utils'
 
-//actual value that i want to access
 export const UserContext = createContext({
     currentUser: null,
     setCurrentUser: () => null    
@@ -14,7 +13,6 @@ export const USER_ACTION_TYPES = {
 }
 
 const userReducer = (state, action) => {
-    console.log("dispatched")
     console.log(action)
     const { type, payload } = action;
 
