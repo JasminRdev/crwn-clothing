@@ -13,7 +13,6 @@ import { ReactComponent  as CrwnLogo } from '../../assets/crown.svg'
 import './navigation.styles.scss'
 
 const Navigation = () => {
-    // const { currentUser } = useContext(UserContext)
    const currentUser = useSelector(selectCurrentUser)
     const { isOpen } = useContext(CartContext)
 

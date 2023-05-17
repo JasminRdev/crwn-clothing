@@ -14,6 +14,7 @@ import {
 } from './utils/firebase/firebase.utils';
 
 const App = () => {
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
