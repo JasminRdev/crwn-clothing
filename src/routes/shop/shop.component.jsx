@@ -5,19 +5,19 @@ import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
 import CategoriesPreview from '../categories-preview/categories-preview.component';
 import './shop.styles.scss'
 import Category from '../category/category'
-import {setCategoriesMap} from '../../store/categories/category.action'
+import {setCategories} from '../../store/categories/category.action'
 
 const Shop = () =>  {
     const dispatch = useDispatch();
 
   useEffect(()=> {
     const getCategoriesMap = async () => {
-        const categoryMap = await getCategoriesAndDocuments('categories')
-        dispatch(setCategoriesMap(categoryMap))
+        const categoriesArray = await getCategoriesAndDocuments('categories')
+        dispatch(setCategories(categoriesArray))
     }
 
     getCategoriesMap()
-}, [dispatch])
+}, [])
   
 
     return(
