@@ -3,7 +3,11 @@ import logger from 'redux-logger';
 
 import { rootReducer } from './root-reducer';
 
-const middleWares = [process.env.NODE_ENV === 'development' && logger].filter(
+// [2 === 3 && {a:"String"}].filter(Boolean) 
+// Ergebnis: []
+// [2 === 2 && {a:"String"}].filter(Boolean) 
+// Ergebnis: [{a:"String"}]
+const middleWares = [process.env.NODE_ENV !== 'production' && logger].filter(
   Boolean
 );
 
