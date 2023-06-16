@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -8,10 +9,12 @@ import Navigation from './routes/navigation/navigation.component';
 import Authentication from './routes/authentication/authentication.component';
 import Shop from './routes/shop/shop.component';
 import { setCurrentUser } from './store/user/user.action';
+
 import {
   onAuthStateChangedListener,
   createUserDocumentFromAuth,
 } from './utils/firebase/firebase.utils';
+
 
 const App = () => {
   

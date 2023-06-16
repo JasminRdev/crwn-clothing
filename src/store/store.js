@@ -3,24 +3,13 @@ import logger from 'redux-logger';
 
 import { rootReducer } from './root-reducer';
 
-// const middleWares = [process.env.NODE_ENV === 'development' && logger].filter(
-  // Boolean
-// );
-
-const loggerMiddleware = (store) => (next) => (action) => {
-  if(!action.type){
-    return next(action);
-  }
-
-  console.log("type: ", action.type)
-  console.log("payload: ", action.payload)
-  console.log("currentstate: ", store.getState())
-
-  next(action);
-  console.log("next state: ", store.getState())
-}
-
-const middleWares = [loggerMiddleware]
+// [2 === 3 && {a:"String"}].filter(Boolean) 
+// Ergebnis: []
+// [2 === 2 && {a:"String"}].filter(Boolean) 
+// Ergebnis: [{a:"String"}]
+const middleWares = [process.env.NODE_ENV !== 'production' && logger].filter(
+  Boolean
+);
 
 const composedEnhancers = compose(applyMiddleware(...middleWares));
 
