@@ -8,6 +8,7 @@ import { setCategoriesMap } from '../../store/categories/category.action';
 
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
 
+
 const Shop = () =>  {
     const dispatch = useDispatch();
 
