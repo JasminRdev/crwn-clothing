@@ -15,7 +15,7 @@ root.render(
     <BrowserRouter>
         <CartProvider>
           <App />
-        </CartProvider>     
+        </CartProvider>      
      </BrowserRouter>
     </Provider>
   </React.StrictMode>

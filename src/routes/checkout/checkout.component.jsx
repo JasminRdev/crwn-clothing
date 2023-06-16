@@ -33,7 +33,7 @@ import './checkout.styles.scss'
                         </span>
 
                     </div>
-                    <span>{e.price}</span>
+                    <span>{e.price*e.quantity}</span>
                     <span>
                     <h1 className='x' onClick={() => del(e.id)}>&#10005;</h1>
                     </span>
