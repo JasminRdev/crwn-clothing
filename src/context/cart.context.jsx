@@ -43,7 +43,6 @@ export const CART_ACTION_TYPES = {
 }
 
 const cartReducer = (state, action) => {
-    console.log("dispatch ", state)
     const {type, payload} = action;
 
     switch(type) {
