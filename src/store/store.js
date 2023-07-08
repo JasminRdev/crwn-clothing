@@ -1,5 +1,6 @@
 import { compose, createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
+import thunk from 'redux-thunk'
 
 import { rootReducer } from './root-reducer';
 
@@ -7,7 +8,7 @@ import { rootReducer } from './root-reducer';
 // Ergebnis: []
 // [2 === 2 && {a:"String"}].filter(Boolean) 
 // Ergebnis: [{a:"String"}]
-const middleWares = [process.env.NODE_ENV !== 'production' && logger].filter(
+const middleWares = [process.env.NODE_ENV !== 'production' && logger, thunk].filter(
   Boolean
 );
 
